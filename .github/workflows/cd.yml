@@ -1,0 +1,41 @@
+name: cd
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v4
+    - name: setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+    - name: read package.json
+      uses: jaywcjlove/github-action-package@main
+      id: package
+    - name: setup info
+      id: info
+      run: |
+        echo "name=${{ steps.package.outputs.name }}" >> $GITHUB_OUTPUT
+        echo "version=v${{ steps.package.outputs.version }}" >> $GITHUB_OUTPUT
+        echo "file=${{ steps.package.outputs.name }}_v${{ steps.package.outputs.version }}.zip" >> $GITHUB_OUTPUT
+    - name: rename dist
+      run: mv dist ${{ steps.info.outputs.name }}
+    - name: zip dist
+      run: zip -r ${{ steps.info.outputs.file }} ${{ steps.info.outputs.name }}
+    - name: create release
+      uses: softprops/action-gh-release@v2
+      with:
+        draft: true
+        name: ${{ steps.info.outputs.version }}
+        tag_name: ${{ steps.info.outputs.version }}
+        body: ${{ steps.info.outputs.version }}
+        files: ${{ steps.info.outputs.file }}
