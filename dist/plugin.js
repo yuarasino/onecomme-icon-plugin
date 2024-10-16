@@ -2,7 +2,7 @@ const PLUGIN_NAME = "わんコメアイコンプラグイン"
 const PLUGIN_UID = "net.yuarasino.onecomme-icon-plugin"
 const PLUGIN_VERSION = "1.0.0"
 const PLUGIN_AUTHOR = "新篠ゆう"
-const PLUGIN_URL = "https://github.com/yuarasino/onecomme-icon-plugin"
+const PLUGIN_URL = "https://yuarasino.booth.pm/items/6192947"
 const PLUGIN_ROOT = `http://localhost:11180/plugins/${PLUGIN_UID}`
 
 module.exports = {

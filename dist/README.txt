@@ -4,6 +4,7 @@ onecomme icon plugin
 バージョン: v1.0.0
 
 作者: 新篠ゆう@バーチャル美少女プログラマー
+販売ページ: https://yuarasino.booth.pm/items/6192947
 ソースコード: https://github.com/yuarasino/onecomme-icon-plugin
 
 
