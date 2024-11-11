@@ -1,6 +1,8 @@
-# onecomme-icon-plugin
+# iconchanger
 
 ![onecomme-icon-plugin](./docs/onecomme-icon-plugin.png)
+
+こちらはユーザーごとにアイコンが変更できるようにしたバージョンです
 
 
 ## Description
