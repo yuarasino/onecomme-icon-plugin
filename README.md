@@ -2,6 +2,7 @@
 
 ![onecomme-icon-plugin](./docs/onecomme-icon-plugin.png)
 
+こちらは枠ごとにアイコンが変更できるようにしたバージョンです
 
 ## Description
 

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - iconswitcher
 
 permissions:
   contents: write
@@ -25,7 +26,7 @@ jobs:
       id: info
       run: |
         echo "name=${{ steps.package.outputs.name }}" >> $GITHUB_OUTPUT
-        echo "version=v${{ steps.package.outputs.version }}" >> $GITHUB_OUTPUT
+        echo "version=v${{ steps.package.outputs.version }}-${{ steps.package.outputs.name }}" >> $GITHUB_OUTPUT
         echo "file=${{ steps.package.outputs.name }}_v${{ steps.package.outputs.version }}.zip" >> $GITHUB_OUTPUT
     - name: rename dist
       run: mv dist ${{ steps.info.outputs.name }}
